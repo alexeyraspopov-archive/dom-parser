@@ -1,9 +1,9 @@
 'use strict';
 
-var parser = new DOMParser(),
-	clean = document.implementation.createHTMLDocument('');
+var parser = new DOMParser();
 
 function parseShim(html){
+	var clean = document.implementation.createHTMLDocument('');
 	clean.body.innerHTML = html;
 	return clean;
 }
@@ -14,8 +14,7 @@ function parse(html){
 
 module.exports = function(html){
 	var fragment = document.createDocumentFragment(),
-		doc = parse(html),
-		body = doc.body;
+		body = parse(html).body;
 
 	while(body.firstChild){
 		fragment.appendChild(body.firstChild);
