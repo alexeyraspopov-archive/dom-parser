@@ -14,11 +14,19 @@ $ bower install dom-parser
 
 ## API
 
-TBD
+	parse(html)
+
+Returns [DocumentFragment](https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment) with parsed HTML content.
+
+ * `html` - just html code that you want to parse
 
 ## Usage
 
-TBD
+```javascript
+var template = parse('<div id="boo"></div>');
+
+document.body.appendChild(template);
+```
 
 ## License
 

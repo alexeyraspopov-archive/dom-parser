@@ -4,5 +4,6 @@
   "description": "DOM Parser",
   "license": "MIT",
   "main": "index.js",
+  "repo": "alexeyraspopov/dom-parser",
   "author": "Alexey Raspopov (https://github.com/alexeyraspopov)"
 }
