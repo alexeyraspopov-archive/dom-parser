@@ -1,13 +1,11 @@
 'use strict';
 
-var parser = new DOMParser();
+var parser = new DOMParser(),
+	clean = document.implementation.createHTMLDocument('');
 
 function parseShim(html){
-	var doc = document.implementation.createHTMLDocument('');
-
-	doc.body.innerHTML = html;
-
-	return doc;
+	clean.body.innerHTML = html;
+	return clean;
 }
 
 function parse(html){
@@ -16,10 +14,12 @@ function parse(html){
 
 module.exports = function(html){
 	var fragment = document.createDocumentFragment(),
-		doc = parse(html);
+		doc = parse(html),
+		body = doc.body;
 
-	[].slice.call(doc.body.childNodes)
-		.forEach(fragment.appendChild, fragment);
+	while(body.firstChild){
+		fragment.appendChild(body.firstChild);
+	}
 
 	return fragment;
 };
