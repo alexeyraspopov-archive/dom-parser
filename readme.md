@@ -1,12 +1,8 @@
 # dom-parser
 
-DOM Parser
+DOM Parser based on [DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
 
 ## Install
-
-```bash
-$ npm install dom-parser
-```
 
 ```bash
 $ component install alexeyraspopov/dom-parser
