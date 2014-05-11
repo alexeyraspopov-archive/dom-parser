@@ -6,7 +6,7 @@ module.exports = function(html){
 	var fragment = document.createDocumentFragment(),
 		doc = parser.parseFromString(html, 'text/html');
 
-	[].slice.call(doc.body.children).forEach(fragment.appendChild, fragment);
+	[].slice.call(doc.body.childNodes).forEach(fragment.appendChild, fragment);
 
 	return fragment;
 };
